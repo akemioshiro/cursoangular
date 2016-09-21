@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Curso Angular JS</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <div ng-controller="Aula10Controller">
+        <h1>Controller da Aula 10</h1>
+        {{'jaison schimidt' | uppercase}}
+        <br />
+        {{(pessoa | json) | uppercase}}
+        <br />
+        {{pessoa.nome | uppercase}}
+        <br />
+        {{"karoline santos" | retornaOi}}
+        <br />
+        {{pessoa.nome | retornaOi | uppercase}}
+
+    </div>
+
+
+    <script src="js/angular/angular.min.js"></script>
+    <!--modulo generico-->
+    <script src="js/app.module.js"></script>
+    <!--filtro-->
+    <script src="js/aula10Filter.js"></script>
+    <!--definir os controllers-->
+    <script src="js/aula10Controller.js"></script>
+</body>
+</html>
