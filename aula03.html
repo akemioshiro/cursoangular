@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Introdução ao JavaScript</title>
+	<meta charset="utf-8" />
+    <script>
+        var total = 1 + 2;
+        console.log(total);
+
+        var pessoa = {
+            nome: "João",
+            idade: 31,
+            status: false
+        };
+
+        var pessoas = [];
+        pessoas.push(pessoa);
+        pessoas.push(pessoa);
+        pessoas.push(pessoa);
+        pessoas.push(pessoa);
+
+        console.log(pessoas);
+        console.log(pessoas.length);
+
+        if (pessoa.status == true) {
+            console.log("O usuário " + pessoa.nome + " esta ativo.");
+        }
+        else {
+            console.log("O usuário esta bloqueado.");
+        }
+
+        for (var i = 1; i <= 10; i++) {
+            document.write("<p>"+ i +"</p>")
+        }
+
+        function Carrega()
+        {
+            document.getElementById("campo").value = total;
+        }
+        
+    </script>
+</head>
+<body onload="Carrega();">
+    <input value="" id="campo" />
+
+</body>
+</html>

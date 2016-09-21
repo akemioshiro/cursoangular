@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html ng-app ng-init="valor1=5; valor2=10;pessoa={nome:'Patricia'}">
+<head>
+    <title>Curso Angular JS</title>
+    <meta charset="utf-8" />
+    <script src="js/angular/angular.min.js"></script>
+</head>
+<body>
+    <h1>Resultado de subtração: <texto ng-bind="valor2 - valor1"></texto></h1>
+
+    <h1>Somando valor1 e valor2: {{valor1+valor2}}</h1>
+
+    <p>{{50+50}}</p>
+
+    <h1>Seja bem vindo {{pessoa.nome}}</h1>
+    <h1 ng-bind="pessoa.nome"></h1>
+
+    <input type="text" ng-model="pessoa.nome" /><br />
+    Valor 2: <input type="number" ng-model="valor2" /><br />
+    Valor 1: <input type="number" ng-model="valor1" />
+</body>
+</html>
