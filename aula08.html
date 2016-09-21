@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Curso Angular JS</title>
+    <meta charset="utf-8" />
+    <style>
+        /*ng-touched quando entro no campo*/
+
+        input.ng-invalid.ng-touched{
+            background: red;
+            color:white;
+        }
+
+        input.ng-valid.ng-touched{
+            background: green;
+            color:white;
+        }
+    </style>
+</head>
+<body ng-controller="aula08Controller">
+    <!--nao valida o form-->
+    <form name="frm" novalidate ng-submit="salvarPessoa(pessoa)">
+        <p>Nome: <input type="text" ng-model="pessoa.nome" required name="txtNome"/>
+            <div ng-show="frm.$submitted || frm.txtNome.$touched">
+                <div ng-show="frm.txtNome.$error.required">O campo nome deve ser preenchido!</div>
+            </div>
+        </p>
+        <p>Email: <input type="email" ng-model="pessoa.email" required name="txtEmail"/>
+            <div ng-show="frm.$submitted || frm.txtEmail.$touched">
+                <div ng-show="frm.txtEmail.$error.required">O campo email deve ser preenchido!</div>
+                <div ng-show="frm.txtEmail.$error.email">O campo email deve conter um email!</div>
+            </div>
+        </p>
+        <p>Sexo: <input type="radio" value="m" ng-model="pessoa.sexo" />Masculino
+            <input type="radio" value="f" ng-model="pessoa.sexo" />Feminino
+        </p>
+        <p>
+            <input type="submit" value="Salvar" ng-disabled="frm.$invalid" />
+        </p>
+        <p>
+            Estados: 
+            <select ng-model="pessoa.estado">
+                <option ng-repeat="estado in estados" value="{{estado}}" ng-selected="estado==pessoa.estado">{{estado}}</option>
+            </select>
+        </p>
+
+        <pre>
+{{pessoa | json}}
+        </pre>
+{{pessoas | json}}
+        <pre>
+
+</pre>
+
+    </form>
+
+
+    <script src="js/angular/angular.min.js"></script>
+    <!--modulo generico-->
+    <script src="js/app.module.js"></script>
+    <!--definir os controllers-->
+    <script src="js/aula08Controller.js"></script>
+</body>
+</html>
