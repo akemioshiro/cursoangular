@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Curso Angular JS</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <div ng-controller="aula09Ctrl1Controller">
+        Controller 1
+
+        <p>{{pessoa.nome}} - {{pessoa.idade}}</p>
+        <p>{{teste}}</p>
+    </div>
+
+    <div ng-controller="aula09Ctrl2Controller">
+        Controller 2
+        <p>{{outrapessoa.nome}} - {{outrapessoa.idade}}</p>
+    </div>
+
+    <script src="js/angular/angular.min.js"></script>
+    <!--modulo generico-->
+    <script src="js/app.module.js"></script>
+    <!--contem todos os services-->
+    <script src="js/aula09Service.js"></script>
+    <!--factory de pessoas-->
+    <script src="js/aula09PessoaFactory.js"></script>
+    <!--definir os controllers-->
+    <script src="js/aula09Controller.js"></script>
+</body>
+</html>
