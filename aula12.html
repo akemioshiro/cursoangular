@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Curso Angular JS</title>
+    <meta charset="utf-8" />
+    <base href="/cursoangular/" />
+
+    <style>
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+        .classNgClass{
+            font-size:50px;
+            color:red;
+        }
+
+    </style>
+
+    <script src="js/angular/angular.min.js"></script>
+
+</head>
+<body>
+    
+    <div ng-controller="Aula12Controller">
+        <h1>
+            ngShow e ngHide
+        </h1>
+        <div ng-show="mostrar">Este bloco é exibido quando mostrar = true</div>
+        <div ng-hide="mostrar">Este bloco é exibido quando mostrar = false</div>
+        <div ng-show="!mostrar">Este bloco é exibido quando mostrar = !true</div>
+
+        <input type="checkbox" ng-model="mostrar" /> Selecionado: mostrar = true
+
+        <hr />
+
+        <h1>Elemento A</h1>
+        <a href="" >Abrir uma nova página</a>
+
+        <hr />
+
+        <h1>ngBindHtml</h1>
+        {{variavelHtml}}
+        <p ng-bind-html="variavelHtml"></p>
+
+        <hr />
+        <h1>ngClass</h1>
+        <button type="button" ng-click="minhaClass='classNgClass'">Add Class</button>
+        <button type="button" ng-click="minhaClass=''">Remove Class</button>
+        <div ng-class="minhaClass">
+            teste teste teste teste teste classe adicionada em tempo de execução
+        </div>
+
+        <hr />
+
+        <h1>ngCloak</h1>
+        <p>Previne que variaveis do tipo {{}} sejam exibidas no browser</p>
+        <p ng-cloak>{{variavelCloak}}</p>
+
+        <hr />
+        <h1>ngSrc</h1>
+        <button type="button" ng-click="minhaFoto='foto1.jpg'">Foto 1</button>
+        <button type="button" ng-click="minhaFoto='foto2.jpg'">Foto 2</button>
+
+        <img ng-src="imgs/{{minhaFoto}}" />
+
+    </div>
+
+
+    
+    
+    <script src="js/angular/angular-sanitize.min.js"></script>
+    <!--definir os controllers-->
+    <script src="js/aula12Controller.js"></script>
+</body>
+</html>
