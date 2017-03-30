@@ -31,7 +31,7 @@
         templateUrl: "aula11_pagina2.html",
         controller: "Pagina2Controller"
     })
-    .otherwise({
+    .otherwise({ // se nao estiver definido nada
         redirectoTo:'/'
     });
 
